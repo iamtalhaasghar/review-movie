@@ -1,4 +1,4 @@
-from django.conf.urls import url, include
+from django.urls import include, re_path
 from rest_framework_extensions.routers import ExtendedDefaultRouter
 from apps.search.views import MovieDocumentView
 
@@ -12,5 +12,5 @@ movies = router.register(
 
 
 urlpatterns = [
-    url("", include(router.urls)),
+    re_path("", include(router.urls)),
 ]
